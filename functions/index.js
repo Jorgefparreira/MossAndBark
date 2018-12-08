@@ -14,7 +14,7 @@ admin.initializeApp(functions.config().firebase);
 
 
 // POST route from contact form
-app.post('/contactus', function (req, res) {
+exports.app = functions.https.onRequest((req, res) => {
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -48,5 +48,3 @@ app.post('/contactus', function (req, res) {
 	});
 
 });
-
-exports.app = functions.https.onRequest(app);
