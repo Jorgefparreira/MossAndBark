@@ -1,11 +1,12 @@
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Component, OnInit, Input } from '@angular/core';
-import { Garden } from '../garden';
-import { GardenService }  from '../garden.service';
+import { Garden } from '../components/garden-service/garden';
+import { GardenService }  from '../components/garden-service/garden.service';
 import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 import {map} from 'rxjs/operators';
 import {HttpClient} from '@angular/common/http';
+import { PayPalConfig, PayPalEnvironment, PayPalIntegrationType } from 'ngx-paypal';
 
 declare var $: any;
 
@@ -15,6 +16,9 @@ declare var $: any;
   styleUrls: ['./garden-detail.component.css']
 })
 export class GardenDetailComponent implements OnInit {
+
+  public payPalConfig?: PayPalConfig;
+
   @Input() garden: Garden;
 
   images: Array<string>;
@@ -41,10 +45,10 @@ constructor(
 
 }
 
-  public ngOnInit(): void {
-    this.getGarden();
-    this.onLoad();
 
+  public ngOnInit(): void {
+    this.initConfig();
+    this.getGarden();
   }
 
  
@@ -54,10 +58,34 @@ constructor(
       .subscribe(garden => this.garden = garden);         
   }
 
-  onLoad(): void {
-    // let height = $(window).height();
-    // setTimeout(() => $(".general-container").css("min-height", height - 120);), 2000);
-  		// $(".general-container").css("min-height", $(window).height() - 120));  	
+  getHeight(){}
+ 
+
+  private initConfig(): void {
+    this.payPalConfig = new PayPalConfig(PayPalIntegrationType.ClientSideREST, PayPalEnvironment.Sandbox, {
+      commit: true,
+      client: {
+        sandbox: 'AZDxjDScFpQtjWTOUtWKbyN_bDt4OgqaF4eYXlewfBP4-8aqX3PiV8e1GWU6liB2CUXlkA59kJXE7M6R'
+      },
+      button: {
+        label: 'paypal',
+      },
+      onPaymentComplete: (data, actions) => {
+        console.log('OnPaymentComplete');
+      },
+      onCancel: (data, actions) => {
+        console.log('OnCancel');
+      },
+      onError: (err) => {
+        console.log('OnError');
+      },
+      transactions: [{
+        amount: {
+          currency: 'GBP',
+          total: 9
+        }
+      }]
+    });
   }  
 
 }

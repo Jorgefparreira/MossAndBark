@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule }    from '@angular/common/http';
+import { NgxPayPalModule } from 'ngx-paypal';
 
 import { AppComponent } from './app.component';
 import { GardensComponent } from './gardens/gardens.component';
@@ -10,7 +11,9 @@ import { AppRoutingModule } from './/app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { GardenDetailComponent } from './garden-detail/garden-detail.component';
-import { NgbdCarouselBasic }  from './carousel-config';
+import { NgbdCarouselBasic }  from './components/garden-carousel/carousel-config';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +22,16 @@ import { NgbdCarouselBasic }  from './carousel-config';
     HomeComponent,
     ContactComponent,
     GardenDetailComponent,
-    NgbdCarouselBasic
+    NgbdCarouselBasic,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
+    NgxPayPalModule,
     NgbModule
   ],
   providers: [],

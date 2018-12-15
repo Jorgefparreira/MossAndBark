@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Garden } from '../garden';
-import { GardenService } from '../garden.service';
+import { Garden } from '../components/garden-service/garden';
+import { GardenService } from '../components/garden-service/garden.service';
 declare var $: any;
 
 @Component({
@@ -9,7 +9,7 @@ declare var $: any;
   styleUrls: ['./gardens.component.css']
 })
 
-export class GardensComponent implements OnInit {
+export class GardensComponent implements OnInit { 
   gardens: Garden[];
 
 

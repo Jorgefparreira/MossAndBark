@@ -9,13 +9,18 @@ declare var $: any;
 export class AppComponent {
   title = 'Moss And Bark';
 
-  public onActivate(event : any) {  
-  	$(".general-container").css("min-height", $(window).height() - 120);
-	
+  onActivate(){
+    
   }
 
   ngOnInit() {
   	console.log('%cDeveloped by Web Archaeologist - www.web-archaeologist.co.uk', 'background: #222; color: #bada55; width: 100%;');
   }  
+
+  getHeight(){
+    var h = window.innerHeight - 126 + 'px';
+    return h;
+  }  
+  
 
 }

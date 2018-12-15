@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbdCarouselBasic }  from '../carousel-config';
+import { NgbdCarouselBasic }  from '../components/garden-carousel/carousel-config';
 declare var $: any;
 declare var Swiper: any;
 
