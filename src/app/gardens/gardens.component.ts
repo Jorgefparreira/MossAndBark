@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Garden } from '../components/garden-service/garden';
 import { GardenService } from '../components/garden-service/garden.service';
+import { Observable } from 'rxjs';
+import { AngularFirestore } from 'angularfire2/firestore';
 declare var $: any;
 
 @Component({
@@ -17,9 +19,14 @@ getGardens(): void {
   this.gardenService.getGardens()
       .subscribe(gardens => this.gardens = gardens);
 } 
+	public items: Observable<any[]>;
 
-
-  constructor(private gardenService: GardenService) { }
+  constructor(
+		private gardenService: GardenService,
+		db: AngularFirestore
+		) { 
+			this.items = db.collection('/gardens').valueChanges();
+		}
 
   ngOnInit() {
   	this.getGardens();

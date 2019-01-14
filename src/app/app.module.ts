@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule }    from '@angular/common/http';
 import { NgxPayPalModule } from 'ngx-paypal';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
 import { GardensComponent } from './gardens/gardens.component';
@@ -32,7 +35,9 @@ import { FooterComponent } from './components/footer/footer.component';
     AppRoutingModule,
     FormsModule,
     NgxPayPalModule,
-    NgbModule
+    NgbModule,
+    // AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule    
   ],
   providers: [],
   bootstrap: [AppComponent]
