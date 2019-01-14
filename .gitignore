@@ -42,5 +42,5 @@ testem.log
 Thumbs.db
 /%RESOURCE_DIR%
 /src/environments
-/src/environments/environment.prod.ts
-/src/environments/environment.ts
+src/environments/environment.prod.ts
+src/environments/environment.ts
