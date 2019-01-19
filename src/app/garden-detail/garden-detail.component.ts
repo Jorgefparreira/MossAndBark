@@ -4,9 +4,10 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Garden } from '../components/garden-service/garden';
 import { GardenService }  from '../components/garden-service/garden.service';
 import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
-import {map} from 'rxjs/operators';
 import {HttpClient} from '@angular/common/http';
 import { PayPalConfig, PayPalEnvironment, PayPalIntegrationType } from 'ngx-paypal';
+import { AngularFirestore } from 'angularfire2/firestore';
+import { Observable } from 'rxjs';
 
 declare var $: any;
 
@@ -19,7 +20,7 @@ export class GardenDetailComponent implements OnInit {
 
   public payPalConfig?: PayPalConfig;
 
-  @Input() garden: Garden;
+  // @Input() garden: Garden;
 
   images: Array<string>;
 
@@ -27,21 +28,24 @@ export class GardenDetailComponent implements OnInit {
 goBack(): void {
   this.location.back();
 }
+
+public items: Observable<any[]>;
+
 constructor(
   private route: ActivatedRoute,
   private gardenService: GardenService,
   private location: Location, 
   config: NgbCarouselConfig,
-  private _http: HttpClient
+  private _http: HttpClient,
+  public db: AngularFirestore
+
 ) {
     // customize default values of carousels used by this component tree
     config.interval = 10000;
     config.wrap = false;
     config.keyboard = false;
     config.pauseOnHover = false;
-    this.images = [
-      'assets/images/img1.jpg', 'assets/images/img2.jpg'
-    ]  
+    this.images = []  
 
 }
 
@@ -54,8 +58,9 @@ constructor(
  
   getGarden(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.gardenService.getGarden(id)
-      .subscribe(garden => this.garden = garden);         
+    // this.gardenService.getGarden(id)
+    //   .subscribe(garden => this.garden = garden);     
+    this.items = this.db.collection('/gardens', ref => ref.where('id', '==', id)).valueChanges();        
   }
 
   getHeight(){}

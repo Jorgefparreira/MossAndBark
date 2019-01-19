@@ -36,7 +36,7 @@ import { FooterComponent } from './components/footer/footer.component';
     FormsModule,
     NgxPayPalModule,
     NgbModule,
-    // AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule    
   ],
   providers: [],

@@ -1,20 +1,17 @@
-
-<div *ngIf="garden">
-		
-	<div class="container">
+	<div class="container" *ngFor="let item of items | async">
 		<div class="row">
 
 			<div class="col-md-6 col-lg-7 col-12">	
 <ngb-carousel *ngIf="images">
   <ng-template ngbSlide>
-    <img src="{{garden.image}}" alt="Random first slide" class="img-fluid mx-auto d-block">
+    <img src="{{item.image}}" alt="Random first slide" class="img-fluid mx-auto d-block">
 <!--     <div class="carousel-caption">
       <h3>10 seconds between slides...</h3>
       <p>This carousel uses customized default values.</p>
     </div> -->
   </ng-template>
   <ng-template ngbSlide>
-    <img src="{{garden.image}}" alt="Random second slide" class="img-fluid mx-auto d-block">
+    <img src="{{item.image}}" alt="Random second slide" class="img-fluid mx-auto d-block">
 <!--     <div class="carousel-caption">
       <h3>No mouse events...</h3>
       <p>This carousel doesn't pause or resume on mouse events</p>
@@ -23,13 +20,13 @@
 </ngb-carousel>								
 		    </div>
 			<div class="col-md-6 col-lg-5 col-12">
-				<h1 class="text-center h2 hidden-xs" >{{garden.name}}</h1>
+				<h1 class="text-center h2 hidden-xs" >{{ item.name }}</h1>
 				<div class="clearfix">&nbsp;</div>
-				<h2 class="h4">£{{garden.price}}</h2>
+				<h2 class="h4">£{{item.price}}</h2>
 				<p class="small-font">Plus Shipping (£).</p>
 				<p class="small-font">{{height}}Gardens will normally take 2/3 days to get ready before shipping. Due to their perishable nature, orders are limited to the UK.</p>
 				<div class="clearfix">&nbsp;</div>
-				<p>{{garden.description}}</p>
+				<p>{{item.description}}</p>
 				<ngx-paypal [config]="payPalConfig"></ngx-paypal>			
 			</div>	
 			<div class="col-12">
@@ -42,7 +39,6 @@
 			</div>						
 		</div>
 	</div>			
-</div>  
 <div class="clearfix">&nbsp;</div>
 <div class="clearfix">&nbsp;</div>
 <div class="clearfix">&nbsp;</div>

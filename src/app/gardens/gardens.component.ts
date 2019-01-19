@@ -29,7 +29,8 @@ getGardens(): void {
 		}
 
   ngOnInit() {
-  	this.getGardens();
+		this.getGardens();
+		console.log(this.items)
 
 		$(".product-img-box").on({
 			mouseenter: function(){
