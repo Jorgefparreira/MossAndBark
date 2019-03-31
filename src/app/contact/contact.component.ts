@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ContactUsService} from '../services/contact-us.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 declare var $: any;
 
 @Component({
@@ -7,19 +9,25 @@ declare var $: any;
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+  contactForm: FormGroup;
+  formVal;
 
-  constructor() { }
+  constructor(
+    private contactUsService: ContactUsService,
+    private formBuilder: FormBuilder
+  ) { }
 
   ngOnInit() {
-// Send Mail
+    this.contactForm = this.formBuilder.group({
+      name: ['', Validators.nullValidator]
+    })
+  }
 
-var $form = $('form');
-$form.submit(function(){
-   $.post($(this).attr('action'), $(this).serialize(), function(response){
-         // do something here on success
-   },'json');
-   return false;
-});
+  submitForm(){
+    this.formVal = $(".contact-form").serialize();
+    this.contactUsService.submitContactForm(this.formVal);
+    $(".alert").slideDown()
+    return false;    
   }
 
 }

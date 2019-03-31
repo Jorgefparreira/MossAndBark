@@ -5,10 +5,16 @@
 		</div>
   <div class="col-lg-6 col-sm-6 col-md-6">
     <h2>Contact Us</h2>
-    <form method="post" action="https://us-central1-mossandbark-4c8e2.cloudfunctions.net/app" role="form">
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Thank you for your message!</strong> We'll be in contact as soon as possible.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>    
+    <form [formGroup]="contactForm" class="contact-form" (ngSubmit)="submitForm()">
       <div class="form-group">
         <label for="name" class="sr-only">Name</label>
-        <input type="text" placeholder="Name" title="Enter your name" class="form-control" name="name" id="name">
+        <input type="text" placeholder="Name" title="Enter your name" class="form-control" formControlName="name" id="name">
       </div>
       <div class="form-group">
         <label for="phone" class="sr-only">Phone number</label>
@@ -28,6 +34,11 @@
       <button type="submit" value="Send" class="btn btn-primary primary-btn" id="submit-button"><i class="fa fa-paper-plane" aria-hidden="true"></i> Submit</button>
     </form>
     <br>
-  </div> 					
+  </div> 
+  <div class="col-lg-6 col-sm-6 col-md-6">
+    <div class="clearfix">&nbsp;</div>
+    <img src="https://lh3.googleusercontent.com/-I11tof4IVOr_NG3ICiDG3MK1s6e_LUEhMDaCTPALmUz5mnOnYXDhnJzhj7ph8WUW8mA7RiaZEtYGunGgpVJV-UgYJzj8JZn8mk3smAZ6H6QIKCXMDe-RV3OK7ECgApZIB7eTwF6y9eIOqf14Qn7E3K05qXuxw1HNpAbdYEzoZjaL_K25vKbY-O-BQpvMZh6EMxzxHwAoBWAnh_C2pcEJHT1UPJfW5pRlyx9n1XxbGd7Rf-Dw7n0ov9AEHo_4wC6e8wkfKVlfsqjF5To0MztQhipjE9P0CGyCcRX8IWcEBohRsbJhL9hTXskJMhdxvyZDhmHc0MvJnbLDXJysJTCU4zLe1WgW0L0wM947-KAhJLNOxo3kSGEkxVRiBW9GOLcfJD2JCle-NGutWvUiAam3e-spH-3KCme9zqyBI-KBYczBYA9ZFtmY7vYIupVvAJG40VGoMD45GV8WR9izUMdVCCA5DlcfzL8D9n2Rvv5L2VzsaYvEm1-JbwGd8GnqX-evOIl98KUiksIzCAReGwQsnsgb9a7_B-xKB4TMSDBhsSkAvRw6q-aM3YlbBmufje06mNEILKo9UMQh5CoqRBLzMafMLuinOGQt-RKry6CHnaigH2HmCxLW9WmVwtff13_LCfFyKDS7tpkcBjHXU8-Ddl2mnoe-JSm=w608-h642-no" alt="Random second slide" class="img-fluid mx-auto d-block">
+    <div class="clearfix">&nbsp;</div>
+  </div>  					
 	</div>
 </div>  

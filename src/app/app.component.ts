@@ -14,11 +14,11 @@ export class AppComponent {
   }
 
   ngOnInit() {
-  	console.log('%cDeveloped by Web Archaeologist - www.web-archaeologist.co.uk', 'background: #222; color: #bada55; width: 100%;');
+  	console.log('%cDeveloped by Web Archaeologist www.web-archaeologist.co.uk', 'background: #4f3215; color: #fff; width: 100%; padding: 5px;');
   }  
 
   getHeight(){
-    var h = window.innerHeight - 126 + 'px';
+    var h = window.innerHeight - 96 + 'px';
     return h;
   }  
   

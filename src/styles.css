@@ -77,59 +77,6 @@ h1, h2, h3, h4, h5, p, a, td, li {
   }
 }
 
-/*****  index / gardens  *****/
-
-/*#gardens-container {
-	display: none;
-}*/
-
-
-
-#gallery, .ug-gallery-wrapper .ug-slider-wrapper {
-	background-color: transparent !important;
-}
-
-.product-img, .product-img-box{
-	overflow: hidden;
-  -webkit-transition: 800ms;
-  -moz-transition: 800ms;
-  -o-transition: 800ms;
-  -ms-transition: 800ms;	
-}
-
-.product-img-box{
-	position: relative;
-	margin-bottom: 10px;
-}
-
-.product-text-bg{
-    width: 100%;
-    height: 40px;
-    background-color: #000;
-    position: absolute;
-    bottom: -30px;
-    opacity: 0.7;
-    display: none;
-    padding: 7px;
-
-}
-
-.product-text{
-	color: #fff;
-	position: absolute;
-	bottom: -30px;
-	right: 10px;
-  display: none;
-  padding: 7px;
-}
-
-@media (max-width: 992px) {
-  .product-text,
-  .product-text-bg {
-    display: block;
-    bottom: 0;
-  }
-}
 
 /*****  product  *****/
 
@@ -141,7 +88,7 @@ h1, h2, h3, h4, h5, p, a, td, li {
 /*****  footer  *****/
 
 footer{    
-	height: 70px;
+	height: 40px;
   border-top: 3px solid #4f3215;
   background-color: #1a1100;
 }
