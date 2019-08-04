@@ -1,26 +1,24 @@
-import { Component } from '@angular/core';
-declare var $: any;
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  title = 'Moss And Bark';
+  title = "Moss And Bark";
 
-  onActivate(){
-    
-  }
+  onActivate() {}
 
   ngOnInit() {
-  	console.log('%cDeveloped by Web Archaeologist www.web-archaeologist.co.uk', 'background: #4f3215; color: #fff; width: 100%; padding: 5px;');
-  }  
+    console.log(
+      "%cDeveloped by Web Archaeologist www.web-archaeologist.co.uk",
+      "background: #4f3215; color: #fff; width: 100%; padding: 5px;"
+    );
+  }
 
-  getHeight(){
-    var h = window.innerHeight - 96 + 'px';
+  getHeight() {
+    var h = window.innerHeight - 96 + "px";
     return h;
-  }  
-  
-
+  }
 }

@@ -1,9 +1,9 @@
 <div class="container">
 	<div class="row">
-		<div class="col-12">
-			<h1 class="text-center">Gardens</h1>
-		</div>
   <div class="col-lg-6 col-sm-6 col-md-6">
+      <div class="clearfix">&nbsp;</div>
+      <div class="clearfix">&nbsp;</div>
+      <div class="clearfix">&nbsp;</div>
     <h2>Contact Us</h2>
     <div class="alert alert-success alert-dismissible fade show" role="alert">
       <strong>Thank you for your message!</strong> We'll be in contact as soon as possible.
@@ -14,30 +14,30 @@
     <form [formGroup]="contactForm" class="contact-form" (ngSubmit)="submitForm()">
       <div class="form-group">
         <label for="name" class="sr-only">Name</label>
-        <input type="text" placeholder="Name" title="Enter your name" class="form-control" formControlName="name" id="name">
+        <input type="text" placeholder="Name*" title="Enter your name" class="form-control" formControlName="name" id="name">
       </div>
       <div class="form-group">
         <label for="phone" class="sr-only">Phone number</label>
-        <input type="tel" placeholder="Phone number" pattern="[0-9]{6,}" title="Enter your phone number" class="form-control" name="phone" id="phone">
+        <input type="tel" placeholder="Phone number" pattern="[0-9]{6,}" title="Enter your phone number" class="form-control" formControlName="phone" id="phone">
       </div>
       <div class="form-group">
         <label for="email" class="sr-only">Email</label>
-        <input type="email" placeholder="Email*" title="Enter your email" required="required" class="form-control" name="email" id="email">
+        <input type="email" placeholder="Email*" title="Enter your email" required="required" class="form-control" formControlName="email" id="email">
       </div>
       <label for="message-box" class="sr-only">Message</label>
-      <textarea placeholder="Message*" cols="40" rows="5" minlength="2" title="Write a message" required="required" class="form-control" name="message" id="message-box"></textarea>
+      <textarea placeholder="Message*" cols="40" rows="5" title="Write a message" required="required" class="form-control" formControlName="message" id="message-box"  data-gramm_editor="false"></textarea>
       <p id="char-count"></p>
       <div id="visible-comment-box">
         <p id="visible-comment" class="comment-style"></p>
         <p class="comment-style" id="visible-comment2"></p>
       </div>
-      <button type="submit" value="Send" class="btn btn-primary primary-btn" id="submit-button"><i class="fa fa-paper-plane" aria-hidden="true"></i> Submit</button>
+      <button type="submit" value="Send" class="btn btn-primary primary-btn" id="submit-button" [disabled]="contactForm.invalid"><i class="fa fa-paper-plane" aria-hidden="true"></i> Submit</button>
     </form>
     <br>
   </div> 
   <div class="col-lg-6 col-sm-6 col-md-6">
     <div class="clearfix">&nbsp;</div>
-    <img src="https://lh3.googleusercontent.com/-I11tof4IVOr_NG3ICiDG3MK1s6e_LUEhMDaCTPALmUz5mnOnYXDhnJzhj7ph8WUW8mA7RiaZEtYGunGgpVJV-UgYJzj8JZn8mk3smAZ6H6QIKCXMDe-RV3OK7ECgApZIB7eTwF6y9eIOqf14Qn7E3K05qXuxw1HNpAbdYEzoZjaL_K25vKbY-O-BQpvMZh6EMxzxHwAoBWAnh_C2pcEJHT1UPJfW5pRlyx9n1XxbGd7Rf-Dw7n0ov9AEHo_4wC6e8wkfKVlfsqjF5To0MztQhipjE9P0CGyCcRX8IWcEBohRsbJhL9hTXskJMhdxvyZDhmHc0MvJnbLDXJysJTCU4zLe1WgW0L0wM947-KAhJLNOxo3kSGEkxVRiBW9GOLcfJD2JCle-NGutWvUiAam3e-spH-3KCme9zqyBI-KBYczBYA9ZFtmY7vYIupVvAJG40VGoMD45GV8WR9izUMdVCCA5DlcfzL8D9n2Rvv5L2VzsaYvEm1-JbwGd8GnqX-evOIl98KUiksIzCAReGwQsnsgb9a7_B-xKB4TMSDBhsSkAvRw6q-aM3YlbBmufje06mNEILKo9UMQh5CoqRBLzMafMLuinOGQt-RKry6CHnaigH2HmCxLW9WmVwtff13_LCfFyKDS7tpkcBjHXU8-Ddl2mnoe-JSm=w608-h642-no" alt="Random second slide" class="img-fluid mx-auto d-block">
+    <img src="assets/images/contact_image.png" alt="Contact image" class="img-fluid mx-auto d-block side-image">
     <div class="clearfix">&nbsp;</div>
   </div>  					
 	</div>

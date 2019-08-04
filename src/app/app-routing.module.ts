@@ -8,11 +8,11 @@ import { GardenDetailComponent } from './garden-detail/garden-detail.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'gardens', pathMatch: 'full' },
   { path: 'gardens', component: GardensComponent },
   { path: 'home', component: HomeComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'detail/:id', component: GardenDetailComponent },
+  { path: 'detail/:link', component: GardenDetailComponent },
 ];
 
 @NgModule({

@@ -37,8 +37,8 @@ export class GardenService {
 		return this.gardens
 	}
 
-	getGarden(id: number): Observable<Garden> {
-	  this.garden = this.afs.collection('/gardens', ref => ref.where('id', '==', id)).valueChanges();
+	getGarden(link: string): Observable<Garden> {
+	  this.garden = this.afs.collection('/gardens', ref => ref.where('link', '==', link)).valueChanges();
 	  return this.garden
 	//   return of(GARDENS.find(garden => garden.id === id));
 	}	

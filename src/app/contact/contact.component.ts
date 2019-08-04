@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ContactUsService} from '../services/contact-us.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 declare var $: any;
 
 @Component({
@@ -10,6 +10,10 @@ declare var $: any;
 })
 export class ContactComponent implements OnInit {
   contactForm: FormGroup;
+  name;
+  phone;
+  email;
+  message;
   formVal;
 
   constructor(
@@ -18,9 +22,12 @@ export class ContactComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.contactForm = this.formBuilder.group({
-      name: ['', Validators.nullValidator]
-    })
+    this.contactForm = new FormGroup({
+      'name': new FormControl(this.phone, [Validators.required, Validators.minLength(2)]),
+      'phone': new FormControl(this.phone, []),
+      'email': new FormControl(this.email, [Validators.required, Validators.minLength(4), Validators.email ]),
+      'message': new FormControl(this.phone, [Validators.required, Validators.minLength(2)])
+    });
   }
 
   submitForm(){
