@@ -6,6 +6,10 @@ a {
 	text-decoration: none !important;
 }
 
+*:focus{
+  outline: none;
+}
+
 body {
 background-color: #1a1100 !important;
 background-image: url("assets/images/dark-wood.png");

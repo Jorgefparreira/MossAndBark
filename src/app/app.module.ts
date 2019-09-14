@@ -17,6 +17,7 @@ import { GardenDetailComponent } from './garden-detail/garden-detail.component';
 import { NgbdCarouselBasic }  from './components/garden-carousel/carousel-config';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PaperPlaneComponent } from '../assets/svgs/paper-plane/paper-plane.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FooterComponent } from './components/footer/footer.component';
     GardenDetailComponent,
     NgbdCarouselBasic,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    PaperPlaneComponent
   ],
   imports: [
     BrowserModule,

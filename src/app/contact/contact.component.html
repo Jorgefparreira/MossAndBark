@@ -5,11 +5,8 @@
       <div class="clearfix">&nbsp;</div>
       <div class="clearfix">&nbsp;</div>
     <h2>Contact Us</h2>
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-      <strong>Thank you for your message!</strong> We'll be in contact as soon as possible.
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
+    <div class="alert alert-{{messageState}} fade show " role="alert">
+      {{messageResponse}}
     </div>    
     <form [formGroup]="contactForm" class="contact-form" (ngSubmit)="submitForm()">
       <div class="form-group">
@@ -31,7 +28,7 @@
         <p id="visible-comment" class="comment-style"></p>
         <p class="comment-style" id="visible-comment2"></p>
       </div>
-      <button type="submit" value="Send" class="btn btn-primary primary-btn" id="submit-button" [disabled]="contactForm.invalid"><i class="fa fa-paper-plane" aria-hidden="true"></i> Submit</button>
+      <button type="submit" value="Send" class="btn btn-primary primary-btn" id="submit-button" [disabled]="contactForm.invalid"><app-paper-plane fill="#fff"></app-paper-plane> Submit</button>
     </form>
     <br>
   </div> 

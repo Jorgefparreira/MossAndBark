@@ -63,11 +63,11 @@ export class GardenDetailComponent implements OnInit {
   private initConfig(): void {
     this.payPalConfig = new PayPalConfig(
       PayPalIntegrationType.ClientSideREST,
-      PayPalEnvironment.Sandbox,
+      PayPalEnvironment.Production,
       {
         commit: true,
         client: {
-          sandbox: paypal.key
+          production: paypal.key
         },
         button: {
           label: "paypal",

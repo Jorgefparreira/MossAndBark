@@ -1,20 +1,24 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-declare var $: any;
+import Axios from 'axios';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactUsService {
-
-  constructor(
-    public _http: HttpClient
-  ) { } 
+  message = "";
+  messageState;
 
   public submitContactForm(values){
-    let url = "https://us-central1-mossandbark-4c8e2.cloudfunctions.net/app";
-    // this._http.get(url)
-    $.post(url, values, function(response){
-    },'json');    
+    Axios.post('https://us-central1-mossandbark-4c8e2.cloudfunctions.net/contactMailer', values)
+    .then((response) => {
+      this.message = "Thank you for your message! We'll be in contact as soon as possible.";
+      this.messageState = "danger"; 
+      console.log("sent")
+    })    
+    .catch(error => {
+      this.message = "Oops, there's been an error. Please try again later.";
+      this.messageState = "danger";
+      console.log(error);
+    });       
   }
 }

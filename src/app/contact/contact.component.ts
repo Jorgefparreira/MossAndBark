@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ContactUsService} from '../services/contact-us.service';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
-declare var $: any;
+import Axios from 'axios';
 
 @Component({
   selector: 'app-contact',
@@ -15,25 +14,37 @@ export class ContactComponent implements OnInit {
   email;
   message;
   formVal;
+  messageResponse = "";
+  messageState;  
 
   constructor(
-    private contactUsService: ContactUsService,
     private formBuilder: FormBuilder
   ) { }
 
   ngOnInit() {
     this.contactForm = new FormGroup({
-      'name': new FormControl(this.phone, [Validators.required, Validators.minLength(2)]),
+      'name': new FormControl(this.name, [Validators.required, Validators.minLength(2)]),
       'phone': new FormControl(this.phone, []),
       'email': new FormControl(this.email, [Validators.required, Validators.minLength(4), Validators.email ]),
-      'message': new FormControl(this.phone, [Validators.required, Validators.minLength(2)])
-    });
+      'message': new FormControl(this.message, [Validators.required, Validators.minLength(2)])
+    });   
   }
 
   submitForm(){
-    this.formVal = $(".contact-form").serialize();
-    this.contactUsService.submitContactForm(this.formVal);
-    $(".alert").slideDown()
+
+    this.formVal = `name=${this.contactForm.value.name}&phone=${this.contactForm.value.phone}&email=${this.contactForm.value.email}&message=${this.contactForm.value.message}`;
+
+    Axios.post('https://us-central1-mossandbark-4c8e2.cloudfunctions.net/contactMailer', this.formVal)
+    .then((response) => {
+      this.messageResponse = "Thank you for your message! We'll be in contact as soon as possible.";
+      this.messageState = "success"; 
+    })    
+    .catch(error => {
+      this.messageResponse = "Oops, there's been an error. Please try again later.";
+      this.messageState = "danger";
+      console.log(error);
+    });    
+
     return false;    
   }
 

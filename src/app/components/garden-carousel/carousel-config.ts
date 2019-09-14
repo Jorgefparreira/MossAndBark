@@ -6,7 +6,7 @@ import {HttpClient} from '@angular/common/http';
 @Component({
   selector: 'ngbd-carousel-basic',
   templateUrl: './carousel-config.html',
-  providers: [NgbCarouselConfig]  // add NgbCarouselConfig to the component providers
+  providers: [NgbCarouselConfig]
 })
 export class NgbdCarouselBasic implements OnInit {
   images: Array<string>;
@@ -23,15 +23,6 @@ export class NgbdCarouselBasic implements OnInit {
   }
 
   ngOnInit() {
-    // this._http.get('https://picsum.photos/list')
-    //     .pipe(map((images: Array<{id: number}>) => this._randomImageUrls(images)))
-    //     .subscribe(images => this.images = images);
-  }
 
-  // private _randomImageUrls(images: Array<{id: number}>): Array<string> {
-  //   return [1, 2, 3, 4].map(() => {
-  //     const randomId = images[Math.floor(Math.random() * images.length)].id;
-  //     return `https://picsum.photos/900/500?image=${randomId}`;
-  //   });
-  // }
+  }
 }
