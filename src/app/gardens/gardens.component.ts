@@ -6,7 +6,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 @Component({
   selector: 'app-gardens',
   templateUrl: './gardens.component.html',
-  styleUrls: ['./gardens.component.css']
+  styleUrls: ['./gardens.component.scss']
 })
 
 export class GardensComponent implements OnInit { 

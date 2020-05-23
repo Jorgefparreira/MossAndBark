@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule }    from '@angular/common/http';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
@@ -14,10 +13,11 @@ import { AppRoutingModule } from './/app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { GardenDetailComponent } from './garden-detail/garden-detail.component';
-import { NgbdCarouselBasic }  from './components/garden-carousel/carousel-config';
+// import { NgbdCarouselBasic }  from './components/garden-carousel/carousel-config';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PaperPlaneComponent } from '../assets/svgs/paper-plane/paper-plane.component';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { PaperPlaneComponent } from '../assets/svgs/paper-plane/paper-plane.comp
     HomeComponent,
     ContactComponent,
     GardenDetailComponent,
-    NgbdCarouselBasic,
+    // NgbdCarouselBasic,
     NavbarComponent,
     FooterComponent,
     PaperPlaneComponent
@@ -38,9 +38,9 @@ import { PaperPlaneComponent } from '../assets/svgs/paper-plane/paper-plane.comp
     FormsModule,
     ReactiveFormsModule,
     NgxPayPalModule,
-    NgbModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule    
+    AngularFirestoreModule,
+    // NgbModule    
   ],
   providers: [],
   bootstrap: [AppComponent]
