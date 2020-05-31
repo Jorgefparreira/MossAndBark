@@ -11,13 +11,17 @@ a {
 }
 
 body {
-background-color: #1a1100 !important;
-background-image: url("assets/images/dark-wood.png");
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  background-color: #1a1100 !important;
+  background-image: url("assets/images/dark-wood.png");
 }
 
 h1, h2, h3, h4, h5, p, a, td, li {
 	color: #fff !important;
+}
+
+h1{
+  margin: 6px 40px;
+  font-size: 250%;
 }
 
 .primary-btn {
@@ -29,31 +33,6 @@ h1, h2, h3, h4, h5, p, a, td, li {
 	background-color: #248219;
 	border-color: #248219;
 }
-
-.navbar{
-	background-color: initial;
-}
-
-.nav-link {
-	font-weight: bold;
-}
-
-.fa-bars {
-    color: #fff;
-    font-size: 30px;	
-}
-
-.nav-img {
-    position: absolute;
-    right: 0;
-    top: -10px;
-    width: 110px;
-    z-index: 10;	
-}
-
-.navbar-collapse {
-	float: right;
-} 
 
 .lds-dual-ring {
 	margin-top: 200px;
@@ -81,22 +60,6 @@ h1, h2, h3, h4, h5, p, a, td, li {
   }
 }
 
-
-/*****  product  *****/
-
-.small-font {
-	font-size: 11px;
-	margin-bottom: 5px;
-}
-
-/*****  footer  *****/
-
-footer{    
-	height: 40px;
-  border-top: 3px solid #4f3215;
-  background-color: #1a1100;
-}
-
 .left-side-img {
 	position: fixed;
 	left: 0;
@@ -105,13 +68,7 @@ footer{
 	z-index: -1;
 }
 
-#copyright {
-	padding-top: 5px;
-}
-
-#copyright p {
-	margin-bottom: 4px;
-}
+/*****  media queries  *****/
 
 @media (min-height: 650px) {
   .left-side-img {
@@ -130,12 +87,6 @@ footer{
 		margin-left: 175px;
 		margin-right: 50px;
 	} 
-	.product-col{
-		padding: 0 5px;
-	}	
-	.navbar{
-		margin-left: 50px;
-	}
 }
 
 @media (max-width: 767px) {

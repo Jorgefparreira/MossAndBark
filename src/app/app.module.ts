@@ -13,11 +13,9 @@ import { AppRoutingModule } from './/app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { GardenDetailComponent } from './garden-detail/garden-detail.component';
-// import { NgbdCarouselBasic }  from './components/garden-carousel/carousel-config';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PaperPlaneComponent } from '../assets/svgs/paper-plane/paper-plane.component';
-// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -26,7 +24,6 @@ import { PaperPlaneComponent } from '../assets/svgs/paper-plane/paper-plane.comp
     HomeComponent,
     ContactComponent,
     GardenDetailComponent,
-    // NgbdCarouselBasic,
     NavbarComponent,
     FooterComponent,
     PaperPlaneComponent
@@ -39,8 +36,7 @@ import { PaperPlaneComponent } from '../assets/svgs/paper-plane/paper-plane.comp
     ReactiveFormsModule,
     NgxPayPalModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
-    // NgbModule    
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

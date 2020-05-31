@@ -2,11 +2,7 @@ import { ActivatedRoute } from "@angular/router";
 import { Location } from "@angular/common";
 import { Component, OnInit, Input } from "@angular/core";
 import { GardenService } from "../services/garden.service";
-// import { NgbCarouselConfig } from "@ng-bootstrap/ng-bootstrap";
-import {
-  IPayPalConfig,
-  ICreateOrderRequest 
-} from 'ngx-paypal';
+import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
 import { paypal } from "../../environments/environment";
 import { AngularFirestore } from "angularfire2/firestore";
 import { Observable } from "rxjs";
@@ -20,21 +16,13 @@ export class GardenDetailComponent implements OnInit {
   public payPalConfig?: IPayPalConfig;
   public garden;
   link: string;
-  images: Array<string>;
 
   constructor(
     private route: ActivatedRoute,
     private gardenService: GardenService,
     private location: Location,
-    // config: NgbCarouselConfig,
     public db: AngularFirestore
-  ) {
-    // customize default values of carousels used by this component tree
-    // config.interval = 10000;
-    // config.wrap = false;
-    // config.keyboard = false;
-    // config.pauseOnHover = false;
-  }
+  ) { }
 
   ngOnInit(): void {
     this.garden = {
@@ -42,7 +30,6 @@ export class GardenDetailComponent implements OnInit {
     }
     this.link = this.route.snapshot.paramMap.get("link");
     this.getGarden(this.link);
-    this.images = [];
   }
 
   getGarden(link): void {
