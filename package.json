@@ -24,7 +24,7 @@
     "@ng-bootstrap/ng-bootstrap": "^6.1.0",
     "@types/jquery": "^3.3.38",
     "angularfire2": "^5.4.2",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.5.0",
     "core-js": "^3.6.5",
     "firebase": "^7.14.4",
