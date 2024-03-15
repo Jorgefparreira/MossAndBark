@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+
+h1{
+  font-family: 'Permanent Marker', cursive;
+  font-size: 50px;
+}
+
+.product-col {
+  column-count: 3;
+  column-gap: 1em;  
+  margin-top: 20px;
+
+  .product-img-box{
+    position: relative;
+    margin-bottom: 10px;
+    display: inline-block;
+    margin: 0 0 1em;
+    width: 100%; 
+    max-width: 250px;
+    overflow: hidden;   
+
+    .product-img{
+      transition: 800ms;	
+    }
+
+    .product-text-bg,
+    .product-text {
+      transition: 400ms ease-in;
+    }
+
+    .product-text-bg{
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      position: absolute;
+      bottom: -30px;
+      opacity: 0;
+      padding: 5px 10px;
+
+      .product-text{
+        color: #fff;
+        bottom: -30px;
+        right: 10px;
+        opacity: 0;
+        line-height: 1.4;
+      }
+    }
+  }
+}
+
+.product-img-box:hover img{
+  transform: scale(1.1);  
+}
+
+.product-img-box:hover .product-text-bg,
+.product-img-box:hover .product-text{
+  display: block;
+  bottom: 0 !important;
+  opacity: 1 !important;
+}
+
+
+@media (max-width: 992px) {
+  .product-text,
+  .product-text-bg {
+    display: block;
+    bottom: 0;
+  }
+  .product-col {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 500px) {
+  .product-col {
+    column-count: 1;
+  }  
+}
+
+@media (min-width: 768px) {
+	.product-col{
+		padding: 0 5px;
+	}	
+}
+

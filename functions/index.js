@@ -1,6 +1,6 @@
 const admin = require('firebase-admin');
 const functions = require('firebase-functions');
-const contactMailer = require('./contactMailer');
+const contactMailer = require('./contactMailer.js');
 
 admin.initializeApp();
 

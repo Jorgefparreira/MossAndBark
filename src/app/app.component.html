@@ -1,9 +1,7 @@
-<!--The content below is only a placeholder and can be replaced.-->
-  <app-navbar></app-navbar>
-  <div class="general-container" [ngStyle]="{'min-height':getHeight()}">	
-  <router-outlet (activate)='onActivate($event)'></router-outlet>
-  </div>
-  <app-footer></app-footer>
+<app-navbar></app-navbar>
+<main class="general-container">
+  <router-outlet (activate)='onActivate($event)' />
+</main>
 
 
-
+<app-footer></app-footer>

@@ -1,44 +1,48 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
-import { HttpClientModule }    from '@angular/common/http';
-import { NgxPayPalModule } from 'ngx-paypal';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { AngularFireModule } from 'angularfire2';
-import { environment } from '../environments/environment';
+// import { BrowserModule } from '@angular/platform-browser';
+// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { NgModule } from '@angular/core';
+// import { CommonModule } from '@angular/common';
+// import { RouterOutlet } from '@angular/router';
+// import { HttpClientModule }    from '@angular/common/http';
+// import { AppRoutingModule } from './app.routes';
+// import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+// import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+// import { AngularFireModule } from '@angular/fire/compat';
+// import { AngularFirestore } from '@angular/fire/compat/firestore';
+// import { environment } from '../environments/environment';
 
-import { AppComponent } from './app.component';
-import { GardensComponent } from './gardens/gardens.component';
-import { AppRoutingModule } from './/app-routing.module';
-import { HomeComponent } from './home/home.component';
-import { ContactComponent } from './contact/contact.component';
-import { GardenDetailComponent } from './garden-detail/garden-detail.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { PaperPlaneComponent } from '../assets/svgs/paper-plane/paper-plane.component';
+// import { AppComponent } from './app.component';
+// //  
+// import { ContactComponent } from './pages/contact/contact.component';
+// import { GardensComponent }   from './pages/gardens/gardens.component';
+// import { NavbarComponent } from './components/navbar/navbar.component';
+// import { FooterComponent } from './components/footer/footer.component';
+// import { PaperPlaneComponent } from '../assets/svgs/paper-plane/paper-plane.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    GardensComponent,
-    HomeComponent,
-    ContactComponent,
-    GardenDetailComponent,
-    NavbarComponent,
-    FooterComponent,
-    PaperPlaneComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    NgxPayPalModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
+// @NgModule({
+//   declarations: [
+//     AppComponent,
+//     GardensComponent, 
+//     ContactComponent,
+//     NavbarComponent,
+//     FooterComponent,
+//     PaperPlaneComponent,
+//   ],
+//   imports: [
+//     AppRoutingModule,
+//     CommonModule,
+//     RouterOutlet,
+//     BrowserModule,
+//     HttpClientModule,
+//     FormsModule,
+//     ReactiveFormsModule,
+//     provideFirestore(() => getFirestore()),
+//     AngularFireModule.initializeApp(environment.firebase),
+//     AngularFirestore
+//   ],
+//   providers: [
+//     AngularFirestore
+//   ],
+//   bootstrap: [AppComponent ]
+// })
+// export class AppModule { }

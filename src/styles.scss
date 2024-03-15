@@ -15,6 +15,15 @@ body {
   background-image: url("assets/images/dark-wood.png");
 }
 
+html, body, app-root{
+  height: 100%;
+}
+
+app-root{
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
 h1, h2, h3, h4, h5, p, a, td, li {
 	color: #fff !important;
 }
@@ -111,3 +120,5 @@ h1{
 }
 
  
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

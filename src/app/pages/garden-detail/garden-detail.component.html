@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-6 col-lg-7 col-12">
+      <img src="{{garden?.images[0]}}" alt="{{ garden?.name }}" class="img-fluid mx-auto d-block product-img"
+        *ngIf="garden?.images?.length === 1">
+      <ngb-carousel *ngIf="garden?.images?.length > 1" #carousel [interval]="5000" >
+          <ng-template ngbSlide *ngFor="let image of garden?.images">
+            <img src="{{image}}" alt="{{ garden?.name }}" class="img-fluid mx-auto d-block product-img">
+          </ng-template>
+
+      </ngb-carousel>
+    </div>
+    <div class="col-md-6 col-lg-5 col-12">
+      <h1 class="text-center h2">{{ garden?.name }}</h1>
+      <h2 class="h4">£{{garden?.price}}</h2>
+      <p class="small-font">Plus Shipping (£).</p>
+      <p class="small-font"><!--{{height}}-->Gardens will normally take 2/3 days to get ready before shipping. Due to
+        their perishable nature, orders are limited to the UK.</p>
+      <p>{{garden?.description}}</p>
+      <!-- <ngx-paypal [config]="payPalConfig"></ngx-paypal>			 -->
+    </div>
+    <div class="col-12">
+
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary primary-btn backButton" (click)="goBack()">Back</button>
+    </div>
+  </div>
+</div>
