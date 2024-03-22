@@ -1,0 +1,18 @@
+
+label {
+  display: none;
+}
+
+.form-group{
+  margin-bottom: 18px;
+}
+
+.side-image{
+  max-width: 350px;
+}
+
+@media(max-width:992px){
+  .row{
+      flex-direction: column-reverse;
+  }
+}

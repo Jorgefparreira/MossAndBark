@@ -11,8 +11,8 @@ a {
 }
 
 body {
-  background-color: #1a1100 !important;
-  background-image: url("assets/images/dark-wood.png");
+  background-color: #b5c3ab !important;
+  // background-image: url("assets/images/dark-wood.png");
 }
 
 html, body, app-root{
@@ -25,7 +25,7 @@ app-root{
 }
 
 h1, h2, h3, h4, h5, p, a, td, li {
-	color: #fff !important;
+	color: #333 ;
 }
 
 h1{
@@ -33,14 +33,20 @@ h1{
   font-size: 250%;
 }
 
-.primary-btn {
-	background-color: #14440e;
-	border-color: #14440e;
+.btn-action {
+  background: #577d50 !important;
+  color: #fff !important;
+  font-weight: 500 !important;
+  transition: 400ms;
+  border: 1px solid #fff;
 }
 
-.primary-btn:hover {
-	background-color: #248219;
-	border-color: #248219;
+.btn-action:hover {
+	background-color: #446141 !important;
+}
+
+.btn-action:focus{
+  box-shadow: none !important;
 }
 
 .lds-dual-ring {
@@ -69,34 +75,34 @@ h1{
   }
 }
 
-.left-side-img {
-	position: fixed;
-	left: 0;
-	top: 0;
-	width: 180px;
-	z-index: -1;
-}
+// .left-side-img {
+// 	position: fixed;
+// 	left: 0;
+// 	top: 0;
+// 	width: 180px;
+// 	z-index: -1;
+// }
 
 /*****  media queries  *****/
 
-@media (min-height: 650px) {
-  .left-side-img {
-  	width: auto;
-  }
-}
+// @media (min-height: 650px) {
+//   .left-side-img {
+//   	width: auto;
+//   }
+// }
 
-@media (min-height: 1050px) {
-  .left-side-img {
-  	display: none;
-  }
-}
+// @media (min-height: 1050px) {
+//   .left-side-img {
+//   	display: none;
+//   }
+// }
 
-@media (min-width: 768px) {
-	.general-container{
-		margin-left: 175px;
-		margin-right: 50px;
-	} 
-}
+// @media (min-width: 768px) {
+// 	.general-container{
+// 		margin-left: 175px;
+// 		margin-right: 50px;
+// 	} 
+// }
 
 @media (max-width: 767px) {
   .hidden-xs {
